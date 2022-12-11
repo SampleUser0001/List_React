@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "message": "hoge",
+        "checked": false
+    },
+    {
+        "id": 2,
+        "message": "piyo",
+        "checked": true
+    }
+
+]
