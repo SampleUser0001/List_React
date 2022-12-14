@@ -1,10 +1,10 @@
 import React from "react";
 import Checkbox from "./Checkbox";
 
-const Item = ({ id, checked, message }) => {
+const Item = ({ id, checked, message, onChange = f => f}) => {
     return (
         <div>
-            <Checkbox id={id} checked={checked} />
+            <Checkbox id={id} checked={checked} onChange={onChange}/>
             {message}                
         </div>
     );

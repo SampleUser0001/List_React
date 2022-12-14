@@ -4,12 +4,16 @@ import ItemList from "./component/ItemList";
 import messageDatas from "./static/messages.json";
 
 export default function App() {
-    const [ messages ] = useState(messageDatas);
-    // TODO チェックボックス押下時の挙動を書く必要がある。
+    const [ messages, setMessages ] = useState(messageDatas);
+    const onChange = (id) => {
+        messages.map(message => message.id === id ? message.checked = !message.checked : message );
+        setMessages([...messages]);
+    }
+
     return (
         <>
             <Title />
-            <ItemList messages={messages}/>
+            <ItemList messages={messages} onChange={onChange}/>
         </>
     ); 
 }
