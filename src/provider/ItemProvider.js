@@ -8,11 +8,10 @@ export default function ItemProvider({ children }) {
     const [items, setMessages] = useState(messageDatas);
     
     const onChange = (id) => {
-        setMessages(
-            items.map(item => (item.id === id ? item.checked = !item.checked : item))
-        );
+        items.map(item => item.id === id ? item.checked = !item.checked : item);
+        setMessages([...items]);
     }
-    
+
     return (
         <ItemContext.Provider value={{ items, onChange }}>
             {children}

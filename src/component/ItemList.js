@@ -1,14 +1,16 @@
 import React from "react";
 import Item from "./Item";
+import { useItems } from "../provider/ItemProvider";
 
-const ItemList = ({ messages = [], onChange = f => f}) => {
+export default function ItemList() {
+    const { items } = useItems();
+
     return (
         <div>
-            {messages.map(item => (
-                <Item key={item.id} {...item} onChange={onChange}/>
+            {items.map(item => (
+                <Item key={item.id} {...item} />
             ))}
         </div>
     );
 }
 
-export default ItemList;
