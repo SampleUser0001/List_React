@@ -8,7 +8,7 @@ const CheckBox = ({id, checked}) => {
         <input type="checkbox"
             id={id}
             checked={checked}
-            onChange={id => onChange(id)}
+            onChange={() => onChange(id)}
         />
     );
 }
